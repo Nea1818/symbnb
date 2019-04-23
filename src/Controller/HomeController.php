@@ -6,7 +6,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
 
     /**
@@ -17,7 +18,8 @@ class HomeController extends Controller {
      *
      * @return void
      */
-    public function hello($prenom = "anonyme", $age = 0) {
+    public function hello($prenom = "anonyme", $age = 0)
+    {
         return $this->render(
             'hello.html.twig',
             [
@@ -31,20 +33,17 @@ class HomeController extends Controller {
     /**
     * @Route("/", name="homepage")
     */
-    public function home(){
-
+    public function home()
+    {
         $prenoms = ["Lior" => 31, "Peter" => 12, "Pan" => 50];
 
         return $this->render(
             'home.html.twig',
             ['title' => "Bonjour",
             'age' => 31,
-            'tableau' => $prenoms 
+            'tableau' => $prenoms
 
             ]
         );
     }
-
 }
-
-?>
