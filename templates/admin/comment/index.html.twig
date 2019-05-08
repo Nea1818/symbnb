@@ -17,7 +17,7 @@ commentaires{% endblock %} {% block body %}
     </thead>
 
     <tbody>
-      {% for comment in comments %}
+      {% for comment in pagination.data %}
       <tr>
         <td>{{ comment.id }}</td>
         <td>{{ comment.createdAt | date('d/m/Y H:i') }}</td>
@@ -49,5 +49,6 @@ commentaires{% endblock %} {% block body %}
       {% endfor %}
     </tbody>
   </table>
+  {{ pagination.display() }}
 </div>
 {% endblock %}
