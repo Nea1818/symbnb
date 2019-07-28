@@ -41,10 +41,14 @@
 </div>
 
 {% endblock %} {% block javascripts %}
+<script src="{{ asset('build/js/app.js') }}"></script>
+{{ encore_entry_script_tags("js/app") }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function()
+
+  {
     $("#booking_startDate, #booking_endDate").datepicker({
       format: "dd/mm/yyyy",
       datesDisabled: [
@@ -78,5 +82,4 @@
     }
   }
 </script>
-
 {% endblock %}
